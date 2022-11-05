@@ -3,4 +3,3 @@ flask
 flask-sqlalchemy == 2.5.1
 # db-sqlite3
 gunicorn
-python-dotenv == 0.21.0
