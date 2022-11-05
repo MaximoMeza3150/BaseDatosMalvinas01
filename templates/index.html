@@ -25,19 +25,19 @@
                     <div class="card m-3 usaHover">
                       <div class="card-body">
                         <h5 class="card-title">Estado de los equipos </h5>
-                        <p class="card-text">Historial de los equipos de planta. <br>Actualización diaria, revisión los domingos por la noche.</p>
+                        <p class="card-text" >Historial de los equipos de planta. <br>Actualización diaria, revisión los domingos por las noches.</p>
                         <a href={{url_for('equipos.equiposAreas')}} class="btn btn-primary">Ir a plantilla</a>
                       </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                  <div class="card text-white bg-dark m-3">
+                <div class="col-md-4 tarjetaNeuf">
+                  <div class="card  m-3">
                     <div class="card-body">
-                      <h5 class="card-title">Pendientes por condición</h5>
+                      <h5 class="card-title" style=" font-weight: bold;">Pendientes por condición</h5>
                       <p class="card-text">Lista de pendientes para mantenimiento por cada área.
                         <br>Actualización periódica.
                       </p>
-                      <a href="#" class="btn btn-primary">Ir a plantilla</a>
+                      <a href="#" class="btn btn-primary">En proceso...</a>
                     </div>
                   </div>
                 </div>
@@ -48,22 +48,22 @@
                       <p class="card-text">Consolidado de los últimos planos actualizados tanto de Malvinas.
                         <br>Sólo planos de procesos.
                       </p>
-                      <a href="#" class="btn btn-primary">Ir a plantilla</a>
+                      <a href="#" class="btn btn-primary">En proceso...</a>
                     </div>
                   </div>
                 </div>
-                <!-- <div class="col-md-4">
-                  <div class="card text-white bg-dark m-3 ">
+                <div class="col-md-4">
+                  <div class="card m-3 ">
                     <div class="card-body">
                       <h5 class="card-title">Control de emisiones fugitivas</h5>
                       <p class="card-text">Consolidado de fugas de gas natural y líquidos de gas natural de toda la planta.
                         <br>Actualización periódica.
                       </p>
-                      <a href="#" class="btn btn-primary">Ir a plantilla</a>
+                      <a href={{url_for('emisiones.emisionesDemo')}} class="btn btn-primary">Ir a plantilla</a>
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4">
+                <!--<div class="col-md-4">
                   <div class="card m-3 text-white bg-dark">
                     <div class="card-body">
                       <h5 class="card-title">Drenaje de puntos estancos</h5>

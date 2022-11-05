@@ -22,6 +22,11 @@
     --bs-danger: #dc3545;
     --bs-light: #f8f9fa;
     --bs-dark: #212529;
+    --greyLight-2: #c8d0e7;
+
+    --card-background: linear-gradient(to bottom right, #f9fafc, #f7f7f8);
+    --card-shadow: inset 2px 2px 3px #ebebf3, inset 4px 4px 15px #ffffff, 3px 3px 12px #c2c7d4;
+
     --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
@@ -35,6 +40,12 @@
 
 .usaHover div:hover{
       background: var(--bs-light);
+}
+.tarjetaNeuf div{
+  font: --bs-font-sans-serif;
+  border-radius: 5px;
+  box-shadow: var(--card-shadow);
+  background: var(--card-background);
 }
 /* 
 .card{
