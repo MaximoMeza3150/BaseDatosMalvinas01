@@ -1,5 +1,6 @@
 # pip install -r requirements.txt
-flask
+flask == 2.2.2
 flask-sqlalchemy == 2.5.1
+Werkzeug == 2.2.2
 # db-sqlite3
-gunicorn
+gunicorn == 20.1.0
