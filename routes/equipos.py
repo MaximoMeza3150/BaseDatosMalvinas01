@@ -1,5 +1,5 @@
 from sqlite3 import Date
-from flask import Blueprint, redirect, render_template, request
+from flask import Blueprint, redirect, render_template, request, flash
 from models.equipos import *
 from utils.db import db
 from common.filters import detalleEstado, registrarEstado, ultimoEstado, allEstados
@@ -150,6 +150,7 @@ def newRegistroEquipo():
 
     db.session.add(nuevoRegistro)
     db.session.commit()
+    # flash('El equipo ha sido actualizado')
     return redirect ('/equiposAreas/todos')
 
 @equipos.route("/editarRegistro/<tag>/<id>", methods= ['POST', 'GET'])

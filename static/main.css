@@ -47,6 +47,17 @@
   box-shadow: var(--card-shadow);
   background: var(--card-background);
 }
+
+.contenedorEmisiones{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  /* grid-gap: 1em; */
+}
+.contenedorEmisiones div table tr,th {
+  text-align: center;
+}
+
+
 /* 
 .card{
   width: 300px;

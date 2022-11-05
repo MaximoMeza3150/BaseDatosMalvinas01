@@ -1,41 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
-        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-        <link rel="stylesheet" href="{{url_for('static', filename='dashboardStyle.css')}}">
-        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-        <title>Emisiones Demo</title>
-    </head>
-<body>
-    <h1>Demo de emisiones fugitivas</h1>
-    <video controls>
-        <source media="(min-device-width: 480px)" src="https://firebasestorage.googleapis.com/v0/b/emisionesfugitivas-57344.appspot.com/o/fugaFLIR%20(online-video-cutter.com%20640x480).mp4?alt=media&token=678e8f2c-7e3f-4c93-90d5-c702d40d251e" type="video/webm">
-        <source media="(min-device-width: 480px)"  src="https://firebasestorage.googleapis.com/v0/b/emisionesfugitivas-57344.appspot.com/o/fugaFLIR%20(online-video-cutter.com%20640x480).mp4?alt=media&token=678e8f2c-7e3f-4c93-90d5-c702d40d251e" type="video/mp4">
-        <p>Your browser cannot play the provided video file.</p>
-      </video>
-</body>
-<script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-  
-    // Your web app's Firebase configuration
-    const firebaseConfig = {
-      apiKey: "AIzaSyANK_H-_Ld2wfzkhDxrBKmA0r7q_9IJqOw",
-      authDomain: "emisionesfugitivas-57344.firebaseapp.com",
-      projectId: "emisionesfugitivas-57344",
-      storageBucket: "emisionesfugitivas-57344.appspot.com",
-      messagingSenderId: "195843685895",
-      appId: "1:195843685895:web:2ac0529f5a3b58519634a2"
-    };
-  
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-  </script>
-</html>
+{% extends 'partials/BaseEmisiones.html' %}
+
+{% block content %}
+<main class="container contenedorEmisiones mt-auto">
+  <div>
+    <video width="480" height="320" preload controls autoplay poster="{{url_for('static',filename = './img/camaraFlir.jpg')}}">
+      <source src="https://firebasestorage.googleapis.com/v0/b/emisionesfugitivas-57344.appspot.com/o/fugaFLIR%20(online-video-cutter.com%20640x480).mp4?alt=media&token=678e8f2c-7e3f-4c93-90d5-c702d40d251e" type="video/webm">
+      <source src="https://firebasestorage.googleapis.com/v0/b/emisionesfugitivas-57344.appspot.com/o/fugaFLIR%20(online-video-cutter.com%20640x480).mp4?alt=media&token=678e8f2c-7e3f-4c93-90d5-c702d40d251e" type="video/mp4">
+      <p>Your browser cannot play the provided video file.</p>
+  </video>
+  <div class="d-grid gap-2 d-md-flex mx-auto">
+    <button class="btn btn-primary me-md-2" type="button">Realizar nuevo monitoreo</button>
+    <button class="btn btn-success" type="button">Emisión fugitiva superada</button>
+  </div>
+</div>
+
+<div>
+  <!-- <h3>Demo de emisiones fugitivas</h3> -->
+  <h5>Fuga:</h5>
+  <p>EF-MAL-CRIO2-DESH-TAM-GN-010</p>
+  <h5>Ubicación especifica:</h5>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Fecha reporte</th>
+          <th scope="col">Fluido</th>
+          <th scope="col">Tag</th>
+          <th scope="col">Aviso</th>
+          <th scope="col">Usuario</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>05/11/2022</th>
+          <td>Gas Natural</td>
+          <td>PDSH-3930</td>
+          <td>10016723</td>
+          <td>ProgramadorTEST</td>
+        </tr>
+      </tbody>
+    </table>
+    <h5>Monitoreo:</h5>
+    <table class="table" >
+      <thead >
+        <tr>
+          <th scope="col">Fecha</th>
+          <th scope="col">Explosímetro</th>
+          <th scope="col">%LEL</th>
+          <th scope="col">Categoría</th>
+          <th scope="col">Usuario</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="table-danger" >
+          <th>05/11/2022</th>
+          <td><button type="button" class="btn btn-success"> 005648 </button></td>
+          <td><button type="button" class="btn btn-success">Mediciones</button></td>
+          <td>G1</td>
+          <td>ProgramadorTEST</td>
+        </tr>
+        <tr class="table-success" >
+          <th>06/11/2022</th>
+          <td><button type="button" class="btn btn-success"> 005648 </button></td>
+          <td><button type="button" class="btn btn-success">Mediciones</button></td>
+          <td>0 %LEL</td>
+          <td>ProgramadorTEST</td>
+        </tr>
+      </tbody>
+    </table>
+    
+</div>
+
+
+</main>
+{% endblock %}
