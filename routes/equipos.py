@@ -1,12 +1,12 @@
-# from sqlite3 import Date
+from sqlite3 import Date
 from flask import Blueprint, redirect, render_template, request, flash
 from models.equipos import *
-from utils.db import db
+# from utils.db import db
 from common.filters import detalleEstado, registrarEstado, ultimoEstado, allEstados
 from datetime import date
 
 equipos = Blueprint('equipos', __name__)
-hoy =  date.today()
+hoy =  Date.today()
 
 @equipos.route("/")
 def home():
